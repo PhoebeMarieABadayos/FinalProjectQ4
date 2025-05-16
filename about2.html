@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <style>
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EDF2F7;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Enable flexbox for the body */
+    flex-direction: column; /* Stack items vertically by default */
+    align-items: center; /* Center items horizontally */
+}
+
+h1, a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    font-weight: 600;
+}
+
+#signupForm {
+    background-color: #CFF4D2;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+
+#signupForm h2 {
+    font-size: 2rem;
+    color: #16423C;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#signupForm div {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#signupForm label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4A5568;
+    margin-bottom: 0.5rem;
+}
+
+#signupForm input[type="text"],
+#signupForm input[type="email"],
+#signupForm input[type="password"],
+#signupForm textarea {
+    appearance: none;
+    border-width: 1px;
+    border-color: #CBD5E0;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #4A5568;
+    line-height: 1.5rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s ease-in-out, shadow-sm 0.15s ease-in-out;
+    box-sizing: border-box;
+}
+
+#signupForm input[type="text"]:focus,
+#signupForm input[type="email"]:focus,
+#signupForm input[type="password"]:focus,
+#signupForm textarea:focus {
+    border-color: #805AD5;
+    box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.16);
+}
+
+#signupForm textarea {
+    height: 8rem;
+    resize: vertical;
+}
+
+#signupForm .flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+#signupForm .flex label {
+    margin-bottom: 0;
+}
+
+#signupForm .flex input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+#signupForm p.text-red-500 {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #E53E3E;
+    margin-top: 0.25rem;
+}
+
+#signupForm button[type="submit"] {
+    background-color: #16423C;
+    color: #FFF;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.15s ease-in-out, transform 0.125rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#signupForm button[type="submit"]:hover {
+    background-color: #123530;
+    transform: translateY(-0.125rem);
+}
+
+#profileContainer {
+    background-color: #CFF4D2;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: none;
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+
+#profileContainer h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #16423C;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#profileInfo {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+#profileInfo p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #4A5568;
+    margin-bottom: 0.75rem;
+}
+
+#profileInfo p strong {
+    font-weight: 600;
+    color: #1A202C;
+}
+
+</style>
+</head>
+<body class="bg-wellbeing-gray-light">
+    <form id="signupForm" class="space-y-4">
+        <h2 class="text-2xl font-semibold text-wellbeing-blue mb-6 text-center">Sign Up</h2>
+        <div>
+            <label for="firstName" class="block text-wellbeing-gray text-sm font-bold mb-2">First Name <span class="text-red-500">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+            <p id="firstNameError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <div>
+            <label for="lastName" class="block text-wellbeing-gray text-sm font-bold mb-2">Last Name <span class="text-red-500">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+            <p id="lastNameError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <div>
+            <label class="block text-wellbeing-gray text-sm font-bold mb-2">Sex <span class="text-red-500">*</span></label>
+            <div class="flex space-x-4">
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio h-5 w-5 text-wellbeing-blue rounded" name="sex" value="male">
+                    <span class="ml-2 text-gray-700 text-sm">Male</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio h-5 w-5 text-wellbeing-blue rounded" name="sex" value="female">
+                    <span class="ml-2 text-gray-700 text-sm">Female</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio h-5 w-5 text-wellbeing-blue rounded" name="sex" value="prefer_not_to_say">
+                    <span class="ml-2 text-gray-700 text-sm">Prefer not to say</span>
+                </label>
+            </div>
+            <p id="sexError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <div>
+            <label for="email" class="block text-wellbeing-gray text-sm font-bold mb-2">Email Address <span class="text-red-500">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Email Address">
+            <p id="emailError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <div>
+            <label for="password" class="block text-wellbeing-gray text-sm font-bold mb-2">Password <span class="text-red-500">*</span></label>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <p id="passwordError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <div>
+            <label for="contactNumber" class="block text-wellbeing-gray text-sm font-bold mb-2">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" placeholder="Contact Number">
+        </div>
+        <div>
+            <label for="whySupport" class="block text-wellbeing-gray text-sm font-bold mb-2">Why you're supporting our campaign <span class="text-red-500">*</span></label>
+            <textarea id="whySupport" name="whySupport" placeholder="Tell us why you support our campaign..."></textarea>
+            <p id="whySupportError" class="text-red-500 text-xs italic"></p>
+        </div>
+        <button type="submit" class="bg-wellbeing-blue hover:bg-wellbeing-blue-light text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full cursor-pointer">Join the Movement</button>
+    </form>
+    <div id="profileContainer">
+        <h1 class="text-2xl font-semibold text-wellbeing-blue mb-6 text-center">Your Profile</h1>
+        <div id="profileInfo">
+            <p><strong>First Name:</strong> <span id="firstNameDisplay"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastNameDisplay"></span></p>
+            <p><strong>Email Address:</strong> <span id="emailDisplay"></span></p>
+            <p><strong>Sex:</strong> <span id="sexDisplay"></span></p>
+            <p><strong>Why I support this campaign:</strong> <span id="whySupportDisplay"></span></p>
+        </div>
+    </div>
+    <script>
+        const signupForm = document.getElementById('signupForm');
+        const firstNameInput = document.getElementById('firstName');
+        const lastNameInput = document.getElementById('lastName');
+        const sexInputs = document.querySelectorAll('input[name="sex"]');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const whySupportInput = document.getElementById('whySupport');
+        const firstNameError = document.getElementById('firstNameError');
+        const lastNameError = document.getElementById('lastNameError');
+        const sexError = document.getElementById('sexError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const profileContainer = document.getElementById('profileContainer');
+        const firstNameDisplay = document.getElementById('firstNameDisplay');
+        const lastNameDisplay = document.getElementById('lastNameDisplay');
+        const emailDisplay = document.getElementById('emailDisplay');
+        const sexDisplay = document.getElementById('sexDisplay');
+        const whySupportDisplay = document.getElementById('whySupportDisplay');
+
+        signupForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let firstName = firstNameInput.value.trim();
+            let lastName = lastNameInput.value.trim();
+            let sex = document.querySelector('input[name="sex"]:checked');
+            let email = emailInput.value.trim();
+            let password = passwordInput.value.trim();
+            let whySupport = whySupportInput.value.trim();
+
+            let isValid = true;
+
+            firstNameError.textContent = '';
+            lastNameError.textContent = '';
+            sexError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            whySupportError.textContent = '';
+
+            if (!firstName) {
+                firstNameError.textContent = 'required';
+                isValid = false;
+            }
+            if (!lastName) {
+                lastNameError.textContent = 'required';
+                isValid = false;
+            }
+            if (!sex) {
+                sexError.textContent = 'required';
+                isValid = false;
+            }
+            if (!email) {
+                emailError.textContent = 'required';
+                isValid = false;
+            }
+            if (!password) {
+                passwordError.textContent = 'required';
+                isValid = false;
+            }
+            if (!whySupport) {
+                whySupportError.textContent = 'required';
+                isValid = false;
+            }
+
+            if (isValid) {
+                localStorage.setItem('firstName', firstName);
+                localStorage.setItem('lastName', lastName);
+                localStorage.setItem('sex', sex.value);
+                localStorage.setItem('email', email);
+                localStorage.setItem('whySupport', whySupport);
+
+                signupForm.style.display = 'none';
+                profileContainer.style.display = 'block';
+
+                firstNameDisplay.textContent = firstName;
+                lastNameDisplay.textContent = lastName;
+                emailDisplay.textContent = email;
+                sexDisplay.textContent = sex.value;
+                whySupportDisplay.textContent = whySupport;
+            }
+        });
+    </script>
+</body>
+</html>
+

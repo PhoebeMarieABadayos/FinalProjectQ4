@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    color:white
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-size:larger;
+    font-weight: 700;
+    font-style: italic;
+    color:rgb(0, 0, 0)
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+a {
+    font-weight: 600;
+    color:black
+}
+
+.grid-container2 img {
+    width:100px;
+    height:100px;
+}
+
+#container {
+    border: 2px solid;
+    margin: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    position: relative; 
+    background-color: #16423C;
+}
+
+
+#container2 {
+    border: 2px solid;
+    margin: -50px 50px;
+    padding: 20px;
+    position: relative; 
+    background-color: #cFF4D2;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 7fr 1fr 2fr;
+    gap: 1%;
+}
+
+#images {
+    align-items: center;
+    text-align: center;
+}
+
+#plus {
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#pfp {
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#pfp p {
+    border: 2px solid;
+    padding: 2px;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5%;
+}
+
+.grid-container2 #images {
+    border: 2px solid;
+    padding: 10px;
+}
+
+.grid-container3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5%;
+}
+
+.grid-container3 .link {
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.grid-container3 .link a:hover {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#final {
+    position: relative;
+    left: 50px;
+    width: 92.7%;
+    background-color: #16423C;
+    padding: 20px;
+    display: block;
+}
+
+#final a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+  
+#final a:hover {
+    transition: 0.2s;
+    animation: border-animation 2s infinite;
+    font-size: 20px;
+}
+
+#quiz-container {
+    margin: 20px 50px;
+    padding: 20px;
+    border: 2px solid #000000;
+    background-color: #cFF4D2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+     color: red;
+}
+
+#submit-btn, #next-btn {
+    padding: 10px 20px;
+    background-color: #16423C;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#submit-btn:hover, #next-btn:hover {
+    background-color: #123530;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EDF2F7;
+    margin: 0;
+    padding: 0;
+}
+
+h1, a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    font-weight: 600;
+}
+
+#signupForm {
+            background-color: #CFF4D2; /* Light green background */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+}
+
+#signupForm h2 {
+            font-size: 2rem;
+            color: #16423C; /* Dark green heading color */
+            margin-bottom: 1.5rem;
+}
+
+#signupForm div {
+            margin-bottom: 1.5rem;
+            text-align: left;
+}
+
+#signupForm label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 0.5rem;
+}
+
+#signupForm input[type="text"],
+#signupForm input[type="email"],
+#signupForm input[type="password"],
+#signupForm textarea {
+    appearance: none;
+    border-width: 1px;
+    border-color: #CBD5E0;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s ease-in-out, shadow-sm 0.15s ease-in-out;
+}
+
+#signupForm input[type="text"]:focus,
+#signupForm input[type="email"]:focus,
+#signupForm input[type="password"]:focus,
+#signupForm textarea:focus {
+    border-color: #805AD5;
+    box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.16);
+}
+
+#signupForm textarea {
+    height: 8rem;
+    resize: vertical;
+}
+
+#signupForm .flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+#signupForm .flex label {
+    margin-bottom: 0;
+}
+
+#signupForm .flex input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+#signupForm p.text-red-500 {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #E53E3E;
+    margin-top: 0.25rem;
+}
+
+#signupForm button[type="submit"] {
+    background-color: #16423C; /* Dark green submit button */
+    color: #FFF;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.15s ease-in-out, transform 0.125rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signupForm button[type="submit"]:hover {
+    background-color: #123530; /* Darker green hover for submit button */
+    transform: translateY(-0.125rem);
+}
+
+#profileContainer {
+    background-color: #CFF4D2; /* Light green background for profile */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: none;
+    margin-top: 2rem;
+}
+
+#profileContainer h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #16423C; /* Dark green heading for profile */
+    margin-bottom: 1.5rem;
+}
+
+#profileInfo {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+#profileInfo p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #000000;
+    margin-bottom: 0.75rem;
+}
+
+#profileInfo p strong {
+    font-weight: 600;
+    color: #000000;
+}
+
